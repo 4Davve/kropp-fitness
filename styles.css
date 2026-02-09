@@ -93,7 +93,7 @@ button {
 
 html {
   height: 100%;
-  scrollbar-gutter: stable;
+  scrollbar-gutter: auto;
   scroll-behavior: smooth;
 }
 
@@ -115,18 +115,18 @@ a {
   color: var(--color-light);
 }
 
-a:hover {
+/* a:hover {
   color: var(--color-light-gray);
-}
+} */
 
 a:where([class]) {
   display: inline-flex;
 }
 
-/* button,
+button,
 label {
   cursor: pointer;
-} */
+}
 
 button {
   -webkit-tap-highlight-color: transparent;
@@ -165,6 +165,7 @@ svg * {
 
 :root {
   --color-dark: #000000;
+  --color-dark-alternate: #131619;
   --color-light: #ffffff;
   --color-dark-gray: #404040;
   --color-light-gray: #c4c4c4;
@@ -198,6 +199,19 @@ body {
   padding-inline: var(--container-padding-x);
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 700;
   text-transform: uppercase;
@@ -215,24 +229,32 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   white-space: nowrap;
   background-color: var(--color-light);
-  border: none;
+  border: 1px solid var(--color-light);
   border-radius: var(--border-radius);
+  transition: color var(--transition-duration) ease, border-color var(--transition-duration) ease, background-color var(--transition-duration) ease;
 }
 
 .button:hover {
-  background-color: var(--color-light-gray);
+  color: var(--color-light);
+  background-color: var(--color-dark-alternate);
 }
 
+/* Header */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   column-gap: 20px;
   padding-inline: 32px;
+  background-color: var(--color-dark-alternate);
 }
 
 .header-logo {
   flex-shrink: 0;
+}
+
+.header-logo-icon {
+  fill: var(--color-light);
 }
 
 .header-menu-list {
@@ -252,12 +274,18 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1.2px;
 }
 
-.header-menu-link.is-current::after {
+.header-menu-link::after {
   content: "";
   width: 5px;
-  height: 5px;
+  aspect-ratio: 1;
   background-color: currentColor;
   border-radius: 50%;
+  opacity: 0;
+  transition: opacity var(--transition-duration) ease;
+}
+
+.header-menu-link:hover::after {
+  opacity: 1;
 }
 
 .header-actions {
@@ -271,7 +299,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   row-gap: 4px;
   width: 40px;
-  height: 40px;
+  aspect-ratio: 1;
   padding-left: 8px;
   color: var(--color-light);
   background-color: transparent;
@@ -279,16 +307,85 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--border-radius);
 }
 
-.header-burger-button:hover {
-  color: var(--color-light-gray);
-  border-color: currentColor;
-}
-
 .header-burger-button-line {
   width: 6px;
   height: 1px;
   background-color: currentColor;
   box-shadow: 16px 0 0 currentColor;
+}
+
+/* Banner */
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  min-height: 985px;
+  padding: 36px 70px;
+  color: var(--color-light);
+  background-color: var(--color-dark-alternate);
+}
+
+.banner-body {
+  text-transform: uppercase;
+}
+
+.banner-info {
+  display: flex;
+  align-items: end;
+  font-style: 38px;
+  line-height: 1.27;
+  font-weight: 700;
+}
+
+.banner-info::before {
+  content: '';
+  width: 194px;
+  aspect-ratio: 1;
+  margin-right: 30px;
+  background: url('./icons/bold-arrow-down-right.svg') center/contain no-repeat;
+}
+
+.banner-title {
+  font-size: 360px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.banner-pagination-list {
+  display: flex;
+  justify-content: center;
+}
+
+.banner-pagination-item {
+  display: flex;
+}
+
+.banner-pagination-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+  background-color: transparent;
+  border: none;
+}
+
+.banner-pagination-button::after {
+  content: '';
+  width: 10px;
+  aspect-ratio: 1;
+  border: var(--border);
+  border-radius: 50%;
+  transition-duration: var(--transition-duration);
+}
+
+
+.banner-pagination-button.is-current::after {
+  background-color: var(--color-light);
+}
+
+.banner-pagination-button:not(.is-current):hover::after {
+  border-color: var(--color-light-gray);
 }
 
 @media (max-width: 1024px) {
@@ -330,3 +427,5 @@ h1, h2, h3, h4, h5, h6 {
     column-gap: 20px;
   }
 }
+
+/* End Header */
