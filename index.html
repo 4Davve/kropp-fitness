@@ -25,7 +25,7 @@
 
   <body>
     <header class="header-logo header">
-      <a href="/" class="header-logo">
+      <a class="header-logo" href="/">
         <svg class="header-logo-icon" width="124" height="24">
           <use href="assets/icons/sprite.svg#icon-kropp-logo"></use>
         </svg>
@@ -174,6 +174,99 @@
             </div>
           </li>
         </ul>
+      </section>
+      <section class="training-types">
+        <h2 class="visually-hidden">Types of training</h2>
+        <ul class="training-types-list">
+          <li class="training-types-item">
+            <svg class="training-types-svg" width="150" height="140">
+              <use href="assets/training-types/sprite.svg#icon-maxpump"></use>
+            </svg>
+            <h3 class="training-types-item-title">maxpump</h3>
+          </li>
+          <li class="training-types-item">
+            <svg class="training-types-svg" width="150" height="140">
+              <use href="assets/training-types/sprite.svg#icon-aron-gym"></use>
+            </svg>
+            <h3 class="training-types-item-title">aron gym</h3>
+          </li>
+          <li class="training-types-item">
+            <svg class="training-types-svg" width="150" height="140">
+              <use
+                href="assets/training-types/sprite.svg#icon-fit-and-tone"
+              ></use>
+            </svg>
+            <h3 class="training-types-item-title">fit & tone</h3>
+          </li>
+          <li class="training-types-item">
+            <svg class="training-types-svg" width="150" height="140">
+              <use href="assets/training-types/sprite.svg#icon-forza"></use>
+            </svg>
+            <h3 class="training-types-item-title">forza</h3>
+          </li>
+          <li class="training-types-item">
+            <svg class="training-types-svg" width="150" height="140">
+              <use
+                href="assets/training-types/sprite.svg#icon-balance-fitness"
+              ></use>
+            </svg>
+            <h3 class="training-types-item-title">balance fitness</h3>
+          </li>
+          <li class="training-types-item">
+            <svg class="training-types-svg" width="150" height="140">
+              <use
+                href="assets/training-types/sprite.svg#icon-body-sculpt"
+              ></use>
+            </svg>
+            <h3 class="training-types-item-title">sculpt</h3>
+          </li>
+        </ul>
+      </section>
+      <section class="join-us">
+        <div class="join-us-video-wrapper">
+          <video
+            class="join-us-video"
+            src=""
+            width="960"
+            height="600"
+            poster="./images/join-us/video-placeholder.webp"
+          >
+            <button class="join-us-video-play-button" type="">Play</button>
+          </video>
+        </div>
+        <div class="join-us-body container">
+          <h2 class="join-us-title">Join us</h2>
+          <form class="join-us-form">
+            <div class="join-us-form-header">
+              <h3 class="join-us-form-title backdrop-title" data-title="Go!">
+                Start here
+              </h3>
+              <div class="join-us-form-subtitle"></div>
+            </div>
+            <div class="join-us-form-body">
+              <label class="visually-hidden" for="username">Name</label>
+              <input
+                class="join-us-form-input input"
+                id="username"
+                placeholder="Name"
+                type="text"
+              />
+              <label class="visually-hidden" for="email">Email</label>
+              <input
+                class="join-us-form-input input"
+                id="email"
+                placeholder="Email"
+                type="email"
+              />
+              <button
+                class="join-us-form-button button transparent"
+                type="submit"
+              >
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
       </section>
     </main>
   </body>
