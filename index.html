@@ -20,11 +20,12 @@
       rel="apple-touch-icon"
       href="./icons/favicon/cropped-favicon-180x180.png"
     />
+    <script src="./script/header-scroll.js" defer></script>
     <title>Kropp Fitnes</title>
   </head>
 
   <body>
-    <header class="header-logo header">
+    <header class="header is-scrolled is-init">
       <a class="header-logo" href="/">
         <svg class="header-logo-icon" width="124" height="24">
           <use href="assets/icons/sprite.svg#icon-kropp-logo"></use>
@@ -65,6 +66,17 @@
     <main class="content">
       <h1 class="visually-hidden">Kropp Fitness Club</h1>
       <section class="banner">
+        <video
+          class="banner-video-bg"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        >
+          <source src="./video/banner-video-bg-opt.webm" type="video/webm" />
+          <source src="./video/banner-video-bg-opt.mp4" type="video/mp4" />
+        </video>
         <h2 class="visually-hidden">Upcoming events</h2>
         <div class="banner-body">
           <div class="banner-info">
@@ -230,18 +242,22 @@
             width="960"
             height="600"
             poster="./images/join-us/video-placeholder.webp"
-          >
-            <button class="join-us-video-play-button" type="">Play</button>
-          </video>
+          ></video>
+          <button class="join-us-video-play-button" type="button">Play</button>
         </div>
         <div class="join-us-body container">
           <h2 class="join-us-title">Join us</h2>
           <form class="join-us-form">
             <div class="join-us-form-header">
-              <h3 class="join-us-form-title backdrop-title" data-title="Go!">
+              <h3
+                class="join-us-form-title backdrop-title centered title-big"
+                data-title="Go!"
+              >
                 Start here
               </h3>
-              <div class="join-us-form-subtitle"></div>
+              <div class="join-us-form-subtitle">
+                fill the form below to start your journey
+              </div>
             </div>
             <div class="join-us-form-body">
               <label class="visually-hidden" for="username">Name</label>
