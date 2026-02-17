@@ -3,7 +3,7 @@ const header = document.querySelector('.header');
 header.classList.add('is-init');
 
 function updateHeader() {
-  header.classList.toggle('is-scrolled', window.scrollY > 300);
+  header.classList.toggle('is-scrolled', window.scrollY > 10);
 }
 
 updateHeader();
