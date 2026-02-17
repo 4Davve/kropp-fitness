@@ -138,6 +138,7 @@ label {
 
 button {
   -webkit-tap-highlight-color: transparent;
+  -webkit-text-fill-color: currentColor
 }
 
 :where([fill]:not([fill="none"],
@@ -200,7 +201,7 @@ body {
   font-size: 16px;
   line-height: 1.75;
   color: var(--color-light-gray);
-  background-color: var(--color-dark);
+  background-color: var(--color-dark-alternate);
 }
 
 .container {
@@ -289,6 +290,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-light);
   background-color: transparent;
 }
+
 
 .button.transparent {
   position: relative;
