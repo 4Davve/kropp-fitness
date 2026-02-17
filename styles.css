@@ -534,6 +534,10 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-dark-alternate);
 }
 
+.motivation-item.dark {
+  background-color: var(--color-dark);
+}
+
 .motivation-item:nth-child(even) .motivation-card {
   flex-direction: row-reverse;
 }
