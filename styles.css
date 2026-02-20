@@ -925,6 +925,29 @@ input[type=number] {
   padding-right: 0;
 }
 
+/* Footer */
+
+.footer-main {
+  padding-top: 140px;
+  padding-bottom: 160px;
+}
+
+.footer-extra {
+  padding-block: 15px;
+}
+
+.footer-logo {
+  flex-shrink: 0;
+}
+
+.footer-logo-icon {
+  fill: var(--color-light);
+}
+
+.footer-socials-icon {
+  fill: var(--color-light);
+}
+
 @media (max-width: 1919px) {
   .motivation-card-image {
     margin-block: -20px;
@@ -987,6 +1010,30 @@ input[type=number] {
 
   .family-image {
     height: 360px;
+  }
+
+  .calculate {
+    padding-block: 100px;
+  }
+
+  .calculate-inner {
+    column-gap: 20px;
+  }
+
+  .calculate-form-body {
+    grid-template-columns: 1fr;
+  }
+
+  .calculate-button {
+    width: 100%;
+  }
+
+  .calculate-table :is(td, th) {
+    padding-block: 10px;
+  }
+
+  .calculate-table tfoot td {
+    padding-top: 10px;
   }
 }
 
@@ -1086,5 +1133,22 @@ input[type=number] {
 
   .family-body {
     column-gap: 12px;
+  }
+
+  .calculate {
+    padding-block: 60px;
+  }
+
+  .calculate-inner {
+    flex-direction: column;
+    row-gap: 50px;
+  }
+
+  .calculate-table-wrapper::before {
+    display: none;
+  }
+
+  .calculate-form-body {
+    margin-bottom: 40px;
   }
 }
